@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -31,6 +32,8 @@ public class ExerciceTableaux {
 		}
 		
 		reader.close();
+		
+		System.out.println(Arrays.toString(notes));
 
 		
 		//MOYENNE
