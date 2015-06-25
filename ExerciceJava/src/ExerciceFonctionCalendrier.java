@@ -3,9 +3,9 @@ public class ExerciceFonctionCalendrier {
 
 	public static void main(String[] args) {
 
-		//int mois = 11, annee = 1984;
-		for (int annee = 1984; annee < 2015; annee++)
-			for (int mois = 1; mois <= 12; mois ++)	
+		int mois = 4, annee = 1986;
+		//for (int annee = 1984; annee <= 2015; annee++)
+		//	for (int mois = 1; mois <= 12; mois ++)	
 				System.out.println(calendrier(mois, annee));
 
 	}
@@ -14,11 +14,13 @@ public class ExerciceFonctionCalendrier {
 		return header(mois, annee) + body(mois, annee);
 	}
 
-	private static String body(int mois, int annee) {
+	public static String body(int mois, int annee) {
 		
 		StringBuilder sb= new StringBuilder();
 		
 		int jour = premierJourDuMois(mois, annee);
+		
+		jour = (jour < 0) ? (jour + 7) : jour; 
 		
 		for (int i=0; i<jour ; i++)
 		{
@@ -28,9 +30,8 @@ public class ExerciceFonctionCalendrier {
 		for (int i=1; i<=joursDansLeMois(mois, annee); i++)
 		{
 			sb.append(" "+(i < 10 ? " " : "")+i+" ");
-			jour++;
-			jour = jour % 7;
-			if (jour == 0)
+			
+			if ((jour + i) % 7 == 0)
 				sb.append("\n");
 		}
 		
@@ -56,7 +57,7 @@ public class ExerciceFonctionCalendrier {
 		return sb.toString();
 	}
 
-	private static String mois(int mois) {
+	public static String mois(int mois) {
 		switch (mois)
 		{
 			default:
@@ -108,38 +109,42 @@ public class ExerciceFonctionCalendrier {
 			case 11:
 				return 30;
 			case 2:
-				if (estBisextile(annee))
-					return 29;
-				else
-					return 28;
+				return (estBissextile(annee) ? 29 : 28);
 		}
 	}
 	
-	public static boolean estBisextile(int annee)
+	public static boolean estBissextile(int annee)
 	{
 		return (annee%4 == 0 && (annee%100 != 0 || annee%400 == 0));
 	}
 	
 	public static int joursDansLAnnee(int annee)
 	{
-		return estBisextile(annee) ? 366 : 365;
+		return estBissextile(annee) ? 366 : 365;
 	}
 	
 	public static int premierJourDuMois(int mois, int annee)
 	{
-		if (mois == 1 && annee == 2015)
-			return 3; //jeudi
+
+		int jour = 3; //jeudi 1er Janvier 2015
 		
-		if (mois > 1 )
-			return (premierJourDuMois(mois - 1, annee) + joursDansLeMois(mois - 1, annee))%7;
+		for (int an=2015; an<annee; an++)
+		{			
+			jour += joursDansLAnnee(an);
+		}
 		
-		if (annee > 2015)
-			return (premierJourDuMois(mois, annee - 1) + joursDansLAnnee(annee - 1)) %7;
+		for (int an=2015; an>annee; an--)
+		{			
+			jour -= joursDansLAnnee(an-1);
+		}
 		
-		if (annee < 2015)
-			return (premierJourDuMois(mois, annee + 1) + joursDansLAnnee(annee + 1)) %7;
-		
-		return 0;
+		for (int m=1; m < mois; m++)
+		{
+			jour+=joursDansLeMois(m, annee);
+		}
+
+		return (jour%7);
+
 	}
 	
 	
