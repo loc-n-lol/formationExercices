@@ -47,7 +47,7 @@ public class ExerciceFonctions {
 		System.out.println("Exercice 4");
 		
 		int n;
-		n=1968;
+		n=1984;
 		System.out.print("Nombre: "+n+" en romain :"); nbRomain(n); System.out.println();
 		n=2015;
 		System.out.print("Nombre: "+n+" en romain :"); nbRomain(n); System.out.println();
@@ -200,12 +200,13 @@ public class ExerciceFonctions {
 		
 		int nbMots = 0;
 		
-		boolean estUnMot= false;
+		
 		
 		
 		while (reader.hasNext())
 		{
-			String line = reader.nextLine();
+			String line = reader.nextLine().toLowerCase();
+			boolean estUnMot = false;
 
 			for (int i=0; i< line.length(); i++)
 			{
@@ -214,14 +215,15 @@ public class ExerciceFonctions {
 				
 				//espace
 				if (Character.isSpaceChar(c) && estUnMot )
-				{
-					nbMots++;
 					estUnMot = false;
-				}
-				
-				//lettre
-				if (Character.isLetter(c))
+
+				//alphabetique
+				if (Character.isAlphabetic(c))
 				{
+					if (!estUnMot)
+						nbMots++;
+						
+					
 					nbLettres++;
 					estUnMot = true;
 					
@@ -241,13 +243,6 @@ public class ExerciceFonctions {
 							totalVoyelle[voyelleY]++; break;
 					}
 				}
-			}
-			
-			//Mot en fin de ligne
-			if (estUnMot)
-			{
-				nbMots++;
-				estUnMot = false;
 			}
 			
 		}
@@ -274,6 +269,7 @@ public class ExerciceFonctions {
 			writer.println(""+voyelle[v]+": "+totalVoyelle[v]+"/"+totalVoyelles+" = "+freqVoyelle[v]);
 		writer.println("longueur moyenne des mots: "+((double)nbLettres/(double)nbMots));
 		
+		reader.close();
 		writer.close();
 	}
 	
