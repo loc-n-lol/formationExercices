@@ -1,0 +1,13 @@
+rapport sur le fichier exerciceFonctions5.txt
+-----------------------------------------------------------
+nombre de caractères: 3173
+nombre de lettres: 2598
+nombre de mots: 474
+fréquence des voyelles: 
+a: 199/1118 = 0.1779964221824687
+e: 299/1118 = 0.26744186046511625
+i: 276/1118 = 0.24686940966010734
+o: 118/1118 = 0.10554561717352415
+u: 226/1118 = 0.20214669051878353
+y: 0/1118 = 0.0
+longueur moyenne des mots: 5.481012658227848
