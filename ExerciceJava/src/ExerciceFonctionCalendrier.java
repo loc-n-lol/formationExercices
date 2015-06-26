@@ -20,7 +20,7 @@ public class ExerciceFonctionCalendrier {
 		
 		int jour = premierJourDuMois(mois, annee);
 		
-		jour = (jour < 0) ? (jour + 7) : jour; 
+		
 		
 		for (int i=0; i<jour ; i++)
 		{
@@ -29,10 +29,9 @@ public class ExerciceFonctionCalendrier {
 		
 		for (int i=1; i<=joursDansLeMois(mois, annee); i++)
 		{
-			sb.append(" "+(i < 10 ? " " : "")+i+" ");
+			sb.append((i < 10 ? "  " : " ")+i);
 			
-			if ((jour + i) % 7 == 0)
-				sb.append("\n");
+			sb.append(((jour + i) % 7 == 0) ? "\n" : " ");
 		}
 		
 		return sb.toString(); 
@@ -142,8 +141,10 @@ public class ExerciceFonctionCalendrier {
 		{
 			jour+=joursDansLeMois(m, annee);
 		}
+		
+		jour = (jour < 0) ? (jour%7 + 7) : jour%7; 
 
-		return (jour%7);
+		return jour;
 
 	}
 	
