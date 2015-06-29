@@ -59,7 +59,11 @@ public class Rectangle {
 	
 	public static boolean collision(Rectangle r1, Rectangle r2)
 	{
-		return (r1.coinDansRectangle(r2) || r2.coinDansRectangle(r1));
+		return !(	r1.getX2() < r2.getX1() ||
+					r1.getX1() > r2.getX2() ||
+					r1.getY2() < r2.getY1() ||
+					r1.getY1() > r2.getY2() );
+				
 	}
 	
 	//Le rectangle en paramètre a-t-il un coin à l'intérieur de moi

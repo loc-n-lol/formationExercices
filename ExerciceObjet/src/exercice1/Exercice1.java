@@ -13,7 +13,7 @@ public class Exercice1 {
 		
 		Rectangle r2 = new Rectangle(r1);
 		
-		r2.deplacer(10, 5);
+		r2.deplacer(8, -1);
 		
 		System.out.println(r2);
 		System.out.println(Rectangle.collision(r1, r2));
