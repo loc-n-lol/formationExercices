@@ -11,6 +11,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 
+@SuppressWarnings("serial")
 public class Notepad extends JFrame implements ActionListener, DocumentListener {
 
 	private static boolean debug = false;
@@ -98,6 +99,20 @@ public class Notepad extends JFrame implements ActionListener, DocumentListener 
 				JOptionPane.showMessageDialog(this, "Impossible d'écraser ce fichier", "Erreur", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
+			else
+			{
+				int choice = JOptionPane.showConfirmDialog(this, "Ecraser le fichier à cet emplacement ?");
+				
+				switch (choice)
+				{
+					case 0: //OUI
+						break;
+					default:
+					case 1: //NON
+					case 2: //ANNULER
+						return;
+				}
+			}
 		}
 		else
 		{
@@ -128,8 +143,10 @@ public class Notepad extends JFrame implements ActionListener, DocumentListener 
 			errorMessageFileNotfound();
 			return;
 		}
-		
-		pw.close();
+		finally
+		{
+			pw.close();
+		}
 		
 
 		

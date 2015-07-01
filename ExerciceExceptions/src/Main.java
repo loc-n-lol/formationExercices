@@ -25,7 +25,7 @@ public class Main {
 				case 'C':
 					unit1=ConversionTemperature.uniteCelsius; break;
 				case 'F':
-					unit1=ConversionTemperature.uniteFahreneit; break;
+					unit1=ConversionTemperature.uniteFahrenheit; break;
 				default:
 					throw new TemperatureUniteInvalideException();	
 				}
@@ -51,7 +51,7 @@ public class Main {
 				case 'C':
 					unit2=ConversionTemperature.uniteCelsius; break;
 				case 'F':
-					unit2=ConversionTemperature.uniteFahreneit; break;
+					unit2=ConversionTemperature.uniteFahrenheit; break;
 				default:
 					throw new TemperatureUniteInvalideException();	
 				}

@@ -6,7 +6,7 @@ public class ConversionTemperature {
 	
 	public static final int uniteKelvin = 0;
 	public static final int uniteCelsius = 1;
-	public static final int uniteFahreneit = 2;
+	public static final int uniteFahrenheit = 2;
 	
 	public static double conversionGenerale(double valeur, int unit1, int unit2) throws TemperatureNegativeException
 	{
@@ -21,8 +21,8 @@ public class ConversionTemperature {
 					valRet = valeur; break;
 				case ConversionTemperature.uniteCelsius:
 					valRet = kelvin2Celsius(valeur); break;
-				case ConversionTemperature.uniteFahreneit:
-					valRet = kelvin2Fahreneit(valeur); break;
+				case ConversionTemperature.uniteFahrenheit:
+					valRet = kelvin2Fahrenheit(valeur); break;
 			}
 			break;
 		case ConversionTemperature.uniteCelsius:
@@ -32,18 +32,18 @@ public class ConversionTemperature {
 					valRet = celsius2Kelvin(valeur); break;
 				case ConversionTemperature.uniteCelsius:
 					valRet = valeur; break;
-				case ConversionTemperature.uniteFahreneit:
-					valRet = celsius2Fahreneit(valeur); break;
+				case ConversionTemperature.uniteFahrenheit:
+					valRet = celsius2Fahrenheit(valeur); break;
 			}
 			break;
-		case ConversionTemperature.uniteFahreneit:
+		case ConversionTemperature.uniteFahrenheit:
 			switch (unit2)
 			{
 				case ConversionTemperature.uniteKelvin:
 					valRet = fahreneit2Kelvin(valeur); break;
 				case ConversionTemperature.uniteCelsius:
 					valRet = fahreneit2Celsius(valeur); break;
-				case ConversionTemperature.uniteFahreneit:
+				case ConversionTemperature.uniteFahrenheit:
 					valRet = valeur; break;
 			}
 			break;
@@ -73,7 +73,7 @@ public class ConversionTemperature {
 		return ret;
 	}
 	
-	public static double celsius2Fahreneit(double celsius) throws TemperatureNegativeException
+	public static double celsius2Fahrenheit(double celsius) throws TemperatureNegativeException
 	{
 		if (debug)
 			System.out.println("celsius2Fahreneit" + celsius);
@@ -83,28 +83,28 @@ public class ConversionTemperature {
 		return ret;
 	}
 	
-	public static double fahreneit2Celsius(double fahreneit) throws TemperatureNegativeException
+	public static double fahreneit2Celsius(double fahrenheit) throws TemperatureNegativeException
 	{
 		if (debug)
-			System.out.println("fahreneit2Celsius" + fahreneit);
-		double ret = (fahreneit-32)/1.8;
+			System.out.println("fahreneit2Celsius" + fahrenheit);
+		double ret = (fahrenheit-32)/1.8;
 		celsius2Kelvin(ret) ;
 		return ret;
 	}
 	
-	public static double kelvin2Fahreneit(double kelvin) throws TemperatureNegativeException
+	public static double kelvin2Fahrenheit(double kelvin) throws TemperatureNegativeException
 	{
 		if (debug)
 			System.out.println("kelvin2Fahreneit" + kelvin);
-		double ret = celsius2Fahreneit(kelvin2Celsius(kelvin));
+		double ret = celsius2Fahrenheit(kelvin2Celsius(kelvin));
 		return ret;
 	}
 	
-	public static double fahreneit2Kelvin(double fahreneit) throws TemperatureNegativeException
+	public static double fahreneit2Kelvin(double fahrenheit) throws TemperatureNegativeException
 	{
 		if (debug)
-			System.out.println("fahreneit2Kelvin" + fahreneit);
-		double ret = celsius2Kelvin(fahreneit2Celsius(fahreneit));
+			System.out.println("fahreneit2Kelvin" + fahrenheit);
+		double ret = celsius2Kelvin(fahreneit2Celsius(fahrenheit));
 		return ret;
 	}
 	
