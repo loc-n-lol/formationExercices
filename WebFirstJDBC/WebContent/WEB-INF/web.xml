@@ -9,4 +9,33 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+    <param-name>driverclass</param-name>
+    <param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>databaseurl</param-name>
+    <param-value>jdbc:mysql://localhost:3306/webfirstjdbc</param-value>
+  </context-param>
+  <context-param>
+    <param-name>login</param-name>
+    <param-value>root</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value></param-value>
+  </context-param>
+  <listener>
+    <listener-class>com.loncoto.webfirstjdbc.utils.DatabaseManager</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>ClientServlet</display-name>
+    <servlet-name>ClientServlet</servlet-name>
+    <servlet-class>com.loncoto.webfirstjdbc.servlets.ClientServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClientServlet</servlet-name>
+    <url-pattern>/ClientServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
