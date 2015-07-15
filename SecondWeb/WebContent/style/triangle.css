@@ -1,0 +1,16 @@
+td {
+	font-weight: bolder;
+}
+
+td.cellule {
+	background-color: teal;
+}
+
+td.bord {
+	background-color: aqua;
+}
+
+
+#titrePage {
+	text-decoration: underline;
+}

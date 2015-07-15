@@ -9,6 +9,10 @@
     <display-name>DessineServlet</display-name>
     <servlet-name>DessineServlet</servlet-name>
     <servlet-class>com.loncoto.secondweb.servlets.DessineServlet</servlet-class>
+    <init-param>
+    <param-name>feuilleStyle</param-name>
+    <param-value>triangle.css</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>DessineServlet</servlet-name>

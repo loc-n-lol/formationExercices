@@ -3,6 +3,7 @@ package com.loncoto.secondweb.servlets;
 import java.io.IOException;
 import java.util.Enumeration;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 public class DessineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private String cssFilename;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -50,8 +53,16 @@ public class DessineServlet extends HttpServlet {
 		else
 		{
 			request.setAttribute("dimension", t);
+			request.setAttribute("style", cssFilename);
 			getServletContext().getRequestDispatcher("/triangle.jsp").forward(request, response);
 		}
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
+		
+		cssFilename = getServletConfig().getInitParameter("feuilleStyle");
 	}
 
 }
