@@ -52,16 +52,57 @@ public class ClientServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
 		
+		
+
 		switch (action)
 		{
-		case "editer":
-			int id = Integer.parseInt(request.getParameter("id"));
-			Client c = clientDAO.findById(id);
+			case "editer": 
+			{
+				int id = Integer.parseInt(request.getParameter("id"));
+				Client c = clientDAO.findById(id);
+				request.setAttribute("client", c);
+	
+				getServletContext().getRequestDispatcher("/edit.jsp").forward(
+						request, response);
+			}
+			break;
+	
+			case "sauver": 
+			{
+				int id = Integer.parseInt(request.getParameter("id"));
+				String nom = request.getParameter("nom");
+				String email = request.getParameter("email");
+				double solde = Double.parseDouble(request.getParameter("solde"));
+	
+				Client c = new Client(id, nom, email, solde);
+				
+				clientDAO.save(c);
+				
+				response.sendRedirect("ClientServlet");
+			}
+			break;
 			
-			getServletContext().getRequestDispatcher("/edit.jsp").forward(request, response);
+			case "creer":
+			{
+				Client c = new Client ();
+				
+				request.setAttribute("client", c);
+				
+				getServletContext().getRequestDispatcher("/edit.jsp").forward(
+						request, response);
+			}
 			break;
-		case "supprimer":
+	
+			case "supprimer": 
+			{
+				int id = Integer.parseInt(request.getParameter("id"));
+				
+				clientDAO.delete(id);
+				
+				response.sendRedirect("ClientServlet");
+			}
 			break;
+
 		}
 	}
 
