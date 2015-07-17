@@ -32,5 +32,6 @@
   <servlet-mapping>
     <servlet-name>CatalogueServlet</servlet-name>
     <url-pattern>/catalogue</url-pattern>
+    <url-pattern>/catalogue/*</url-pattern>
   </servlet-mapping>
 </web-app>

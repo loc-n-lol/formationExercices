@@ -25,6 +25,7 @@ public class DBManager implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
 		
+
 		System.out.println("Démarrage de "+this.getClass().getSimpleName());
         
         String driverclass = arg0.getServletContext().getInitParameter("driverclass");

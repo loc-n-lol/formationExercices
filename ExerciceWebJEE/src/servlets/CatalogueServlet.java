@@ -46,9 +46,29 @@ public class CatalogueServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setAttribute("articles", articleDAO.findAll());
+		String uri = request.getRequestURI();
 		
-		getServletContext().getRequestDispatcher("/liste.jsp").forward(request, response);
+		String[] champs = uri.split("/");
+		String order = champs[champs.length-1];
+		
+		int choix = ArticleDAO.ORDER_BY_DEFAULT;
+		
+		switch (order)
+		{
+		case "poids":
+			System.out.println("poids");
+			choix = ArticleDAO.ORDER_BY_POIDS;
+			break;
+			
+		case "prix":
+			System.out.println("prix");
+			choix = ArticleDAO.ORDER_BY_PRIX;
+			break;
+		}
+		
+		request.setAttribute("articles", articleDAO.findAll(choix));
+		
+		getServletContext().getRequestDispatcher("/liste2.jsp").forward(request, response);
 		
 	}
 
