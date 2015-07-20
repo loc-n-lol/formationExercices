@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>2.0</jsp-version>
+  <short-name></short-name>
+  <tag>
+  	<name>hello</name>
+    <tag-class>com.loncoto.webCustomTag.utils.HelloTag</tag-class>
+    <body-content>empty</body-content>
+  </tag>  
+  <tag>
+  	<name>selectGenerator</name>
+  	<tag-class>com.loncoto.webCustomTag.utils.SelectGenerator</tag-class>
+  	<body-content>empty</body-content>
+  	<attribute>
+  		<name>items</name>
+  		<required>true</required>
+  	</attribute>
+  	<attribute>
+  		<name>keyProperty</name>
+  		<required>true</required>
+  	</attribute>
+  	<attribute>
+  		<name>valueProperty</name>
+  		<required>true</required>
+  	</attribute>
+  </tag>
+  <tag>
+  	<name>message</name>
+  	<tag-class>com.loncoto.webCustomTag.utils.MessageTag</tag-class>
+  	<body-content>empty</body-content>
+  	<attribute>
+  		<name>message</name>
+  		<required>true</required>
+  	</attribute>
+  </tag>  
+  
+</taglib>
