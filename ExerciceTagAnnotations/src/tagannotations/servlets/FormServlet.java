@@ -33,8 +33,8 @@ public class FormServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
-		request.setAttribute("Article", Article.class);
-		request.setAttribute("Client", Client.class);
+		//request.setAttribute("Article", Article.class);
+		//request.setAttribute("Client", Client.class);
 		
 		getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 	}

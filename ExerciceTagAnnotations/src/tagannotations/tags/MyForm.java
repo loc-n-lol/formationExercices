@@ -44,16 +44,25 @@ public class MyForm extends SimpleTagSupport {
 		PageContext pc = (PageContext)getJspContext();
 		JspWriter writer = pc.getOut();
 		
-		ServletRequest req = pc.getRequest();
+		//ServletRequest req = pc.getRequest();
 
 		writer.println("<form action='"+action+"' method='post'>");
 
-		Class cls = (Class)req.getAttribute(item);
+		//Class cls = req.getAttribute(item).getClass();
+		Class cls = null;
+		try {
+			cls = Class.forName("tagannotations.beans."+item);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		for (Field f : cls.getFields())
+		for (Field f : cls.getDeclaredFields())
 		{
 			ChampFormulaire cf =  f.getAnnotation(ChampFormulaire.class);
-			writer.println(cf.label()+": <input type='text' name='"+cf.name()+"'/><br/>");
+			
+			if (cf != null)
+				writer.println(cf.label()+": <input type='text' name='"+cf.name()+"'/><br/>");
 		}	
 		
 		writer.println("<input type='submit' value='Envoyer'>");

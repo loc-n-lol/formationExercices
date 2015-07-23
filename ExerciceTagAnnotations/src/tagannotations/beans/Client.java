@@ -8,10 +8,10 @@ public class Client {
 	@ChampFormulaire(label="nom client", name="nom")
 	public String nom;
 	
-	@ChampFormulaire(label="e-mail", name="email")
+	@ChampFormulaire(label="e-mail client", name="email")
 	public String email;
 	
-	@ChampFormulaire(label="solde", name="solde")
+	@ChampFormulaire(label="solde client", name="solde")
 	public double solde;
 	
 	public int getId() {

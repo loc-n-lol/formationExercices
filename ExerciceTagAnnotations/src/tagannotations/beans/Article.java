@@ -7,13 +7,13 @@ public class Article {
 	
 
 	@ChampFormulaire(label="nom article", name="nom")
-	public String nom;
+	private String nom;
 
 	@ChampFormulaire(label="prix article", name="prix")
-	public double prix;
+	private double prix;
 
 	@ChampFormulaire(label="poids article", name="poids")
-	public double poids;
+	private double poids;
 	
 	public int getId() {
 		return id;
