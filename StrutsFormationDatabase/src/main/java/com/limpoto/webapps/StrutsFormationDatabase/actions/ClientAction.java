@@ -13,6 +13,12 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ClientAction extends ActionSupport implements ServletContextAware
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
 	private List<Client> clients;
 	public List<Client> getClients() {return clients;}
 	

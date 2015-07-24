@@ -16,7 +16,7 @@
             <result name="success">/index.jsp</result>
         </action>
         
-        <action name="liste" class="com.limpoto.webapps.StrutsFormationDatabase.ClientAction" 
+        <action name="liste" class="com.limpoto.webapps.StrutsFormationDatabase.actions.ClientAction" 
         method="liste" >
             <result name="success">/liste.jsp</result>
         </action>
