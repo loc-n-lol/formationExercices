@@ -9,10 +9,11 @@
 </head>
 <body>
 	<h2>liste des clients</h2>
-	<table boder="2">
+	<table border="2">
 		<tr>
 			<th>nom</th>
 			<th>email</th>
+			<th>solde</th>
 			<th>actions</th>
 		</tr>
 		<s:iterator value="clients">
@@ -20,7 +21,7 @@
 				<td><s:property value="nom" /></td>
 				<td><s:property value="email" /></td>
 				<td><s:property value="solde" /></td>
-				<td>actions...</td>
+				<td><s:a href="edit/%{id}">edition</s:a></td>
 			</tr>
 		</s:iterator>
 	</table>

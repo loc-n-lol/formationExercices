@@ -6,6 +6,7 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
 	<constant name="struts.action.extension" value=","/>
+ 	<constant name="struts.enable.SlashesInActionNames" value="true" />
  
     <package name="default" namespace="/" extends="struts-default">
 
@@ -20,6 +21,19 @@
         method="liste" >
             <result name="success">/liste.jsp</result>
         </action>
+        
+        <action name="edit/*" class="com.limpoto.webapps.StrutsFormationDatabase.actions.ClientAction" 
+        method="edit" >
+        	<param name="clientId">{1}</param>
+            <result name="success">/edit.jsp</result>
+            <result name="notfound" type="redirect">/liste</result>
+        </action>
+        
+        <action name="save" class="com.limpoto.webapps.StrutsFormationDatabase.actions.ClientAction" 
+        method="save" >
+            <result name="success" type="redirect">/liste</result>
+            <result name="input">/edit.jsp</result>
+        </action>        
 
     </package>
 
