@@ -11,8 +11,14 @@
 
         <default-action-ref name="index"/>
 
-        <action name="index" class="com.limpoto.webapps.StrutsFormationDatabase.IndexAction" method="index" >
+        <action name="index" class="com.limpoto.webapps.StrutsFormationDatabase.IndexAction" 
+        method="index" >
             <result name="success">/index.jsp</result>
+        </action>
+        
+        <action name="liste" class="com.limpoto.webapps.StrutsFormationDatabase.ClientAction" 
+        method="liste" >
+            <result name="success">/liste.jsp</result>
         </action>
 
     </package>
