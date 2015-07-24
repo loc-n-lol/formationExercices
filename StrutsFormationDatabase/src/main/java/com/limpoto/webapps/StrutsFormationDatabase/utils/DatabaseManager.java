@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-import com.loncoto.webfirstjdbc.utils.ClientDAO;
 
 /**
  * Application Lifecycle Listener implementation class DatabaseManager
