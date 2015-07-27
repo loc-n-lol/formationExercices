@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.limpoto.webapps</groupId>
-    <artifactId>StrutsFormationDatabase</artifactId>
+    <artifactId>strutsFormationDatabase2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>StrutsFormationDatabase</name>
+    <name>strutsFormationDatabase2</name>
 
     <properties>
         <struts2.version>2.3.24</struts2.version>
@@ -84,6 +84,17 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+        		<groupId>org.codehaus.cargo</groupId>
+        		<artifactId>cargo-maven2-plugin</artifactId>
+        		<version>1.4.15</version>
+        		<configuration>
+      				<container>
+	        			<containerId>tomcat8x</containerId>
+	    				<home>C:\apache-tomcat-8.0.23-windows-x64\apache-tomcat-8.0.23</home>
+    				</container>
+        		</configuration>
+      		</plugin>
         </plugins>
     <finalName>${project.artifactId}</finalName>
     </build>
