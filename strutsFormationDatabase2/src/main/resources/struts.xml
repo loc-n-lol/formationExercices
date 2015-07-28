@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+	<constant name="struts.action.extension" value=","/>
+    <constant name="struts.enable.SlashesInActionNames" value="true" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index"/>
+
+        <action name="index" class="com.limpoto.webapps.StrutsFormationDatabase2.actions.IndexAction" method="index" >
+            <result name="success">/index.jsp</result>
+        </action>
+        
+        <action name="liste" class="com.limpoto.webapps.StrutsFormationDatabase2.actions.ClientAction" 
+        method="liste" >
+            <result name="success">/liste.jsp</result>
+        </action>
+        
+        <action name="edit/*" class="com.limpoto.webapps.StrutsFormationDatabase2.actions.ClientAction" 
+        method="edit" >
+        	<param name="clientId">{1}</param>
+            <result name="success">/edit.jsp</result>
+            <result name="notfound" type="redirect">/liste</result>
+        </action>
+        
+        <action name="sauver" class="com.limpoto.webapps.StrutsFormationDatabase2.actions.ClientAction" 
+        method="sauver" >
+            <result name="success" type="redirect">/liste</result>
+            <result name="input">/edit.jsp</result>
+        </action>               
+
+    </package>
+
+    <!-- Add addition packages and configuration here. -->
+</struts>

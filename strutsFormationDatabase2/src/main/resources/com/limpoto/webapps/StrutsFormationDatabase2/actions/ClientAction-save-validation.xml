@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="clientNom">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Le client doit avoir un nom !!!</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="trim">true</param>
+			<param name="minLength">4</param>
+			<param name="maxLength">50</param>
+			<message>Le nom doit faire entre 4 et 50 caractères !!!</message>
+		</field-validator>		
+	</field>
+	<field name="clientEmail">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Le client doit avoir un e-mail !!!</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="trim">true</param>
+			<param name="minLength">4</param>
+			<param name="maxLength">80</param>
+			<message>l'adresse doit faire entre 4 et 80 caractères !!!</message>
+		</field-validator>		
+	</field>	
+	<field name="clientSolde">
+		<field-validator type="required">
+			<message>Le client doit avoir un solde !!!</message>
+		</field-validator>
+		<field-validator type="double">
+			<param name="minInclusive">0</param>
+			<param name="maxInclusive">100000</param>
+			<message>le solde ne peut être négatif, ou supérieur à 100000$</message>
+		</field-validator>		
+	</field>	
+</validators>
+
