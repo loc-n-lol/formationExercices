@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="titre">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Le client doit avoir un nom !!!</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="trim">true</param>
+			<param name="minLength">5</param>
+			<param name="maxLength">100</param>
+			<message>Le titre doit faire entre 5 et 100 caractères !!!</message>
+		</field-validator>		
+	</field>
+	<field name="corps">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Le post doit avoir un corps !!!</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="trim">true</param>
+			<param name="maxLength">4096</param>
+			<message>le corps doit faire moins de 4096 caractères !!!</message>
+		</field-validator>		
+	</field>	
+</validators>
+
