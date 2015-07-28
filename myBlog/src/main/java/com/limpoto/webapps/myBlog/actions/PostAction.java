@@ -11,7 +11,8 @@ import com.limpoto.webapps.myBlog.beans.*;
 import com.limpoto.webapps.myBlog.util.*;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class PostAction extends ActionSupport implements ServletContextAware {
+public class PostAction extends ActionSupport //implements ServletContextAware 
+{
 
 	/**
 	 * 
@@ -19,6 +20,8 @@ public class PostAction extends ActionSupport implements ServletContextAware {
 	private static final long serialVersionUID = 1L;
 	
 	private PostDAO postDAO; 
+	
+
 	private List<Post> posts;
 
 	private Post post;
@@ -69,6 +72,11 @@ public class PostAction extends ActionSupport implements ServletContextAware {
 	public void setId(int id) {
 		this.id = id;
 	}	
+	
+	//Pour l'injection par le DAOInterceptor
+	public void setPostDAO(PostDAO postDAO) {
+		this.postDAO = postDAO;
+	}
 	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //		ACTIONS
@@ -122,6 +130,8 @@ public class PostAction extends ActionSupport implements ServletContextAware {
 		return SUCCESS;
 	}	
 
+	//N'est plus utilisé : remplacé par le DAOInterceptor qui injecte l'objet DAO par la méthode set*DAO
+	/*
 	@Override
 	public void setServletContext(ServletContext context) {
 		postDAO = (PostDAO) context.getAttribute("postDAO");
@@ -129,5 +139,6 @@ public class PostAction extends ActionSupport implements ServletContextAware {
 		if (postDAO == null)
 			System.out.println("postDAO == null");
 	}
+	*/
 
 }

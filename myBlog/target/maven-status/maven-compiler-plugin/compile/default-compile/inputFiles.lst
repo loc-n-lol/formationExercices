@@ -1,5 +1,6 @@
-C:\Users\Stagiaire\workspace\myBlog\src\main\java\com\limpoto\webapps\myBlog\actions\PostAction.java
-C:\Users\Stagiaire\workspace\myBlog\src\main\java\com\limpoto\webapps\myBlog\util\DatabaseManager.java
-C:\Users\Stagiaire\workspace\myBlog\src\main\java\com\limpoto\webapps\myBlog\beans\Post.java
-C:\Users\Stagiaire\workspace\myBlog\src\main\java\com\limpoto\webapps\myBlog\util\PostDAO.java
-C:\Users\Stagiaire\workspace\myBlog\src\main\java\com\limpoto\webapps\myBlog\actions\IndexAction.java
+C:\Users\Stagiaire\git\formationExercices\myBlog\src\main\java\com\limpoto\webapps\myBlog\util\PostDAO.java
+C:\Users\Stagiaire\git\formationExercices\myBlog\src\main\java\com\limpoto\webapps\myBlog\actions\PostAction.java
+C:\Users\Stagiaire\git\formationExercices\myBlog\src\main\java\com\limpoto\webapps\myBlog\util\DAOInterceptor.java
+C:\Users\Stagiaire\git\formationExercices\myBlog\src\main\java\com\limpoto\webapps\myBlog\actions\IndexAction.java
+C:\Users\Stagiaire\git\formationExercices\myBlog\src\main\java\com\limpoto\webapps\myBlog\beans\Post.java
+C:\Users\Stagiaire\git\formationExercices\myBlog\src\main\java\com\limpoto\webapps\myBlog\util\DatabaseManager.java

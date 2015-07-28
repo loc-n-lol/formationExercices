@@ -24,7 +24,7 @@
 		<field-validator type="stringlength">
 			<param name="trim">true</param>
 			<param name="maxLength">4096</param>
-			<message>l'adresse doit faire moins de 4096 caractères !!!</message>
+			<message>le corps doit faire moins de 4096 caractères !!!</message>
 		</field-validator>		
 	</field>	
 </validators>

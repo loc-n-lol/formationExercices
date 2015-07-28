@@ -10,6 +10,17 @@
 
     <package name="default" namespace="/" extends="struts-default">
 
+		<interceptors>		
+			<interceptor name="daoInterceptor" class="com.limpoto.webapps.myBlog.util.DAOInterceptor" />
+		
+			<interceptor-stack name = "myInterceptorStack" >
+				<interceptor-ref name="daoInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="myInterceptorStack" />
+
         <default-action-ref name="lister"/>
 
         <action name="index" class="com.limpoto.webapps.myBlog.actions.IndexAction" method="index" >
