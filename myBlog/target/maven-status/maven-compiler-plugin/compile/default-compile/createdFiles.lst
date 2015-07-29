@@ -3,4 +3,5 @@ com\limpoto\webapps\myBlog\beans\Post.class
 com\limpoto\webapps\myBlog\util\PostDAO.class
 com\limpoto\webapps\myBlog\util\DAOInterceptor.class
 com\limpoto\webapps\myBlog\actions\PostAction.class
+com\limpoto\webapps\myBlog\util\RSSResult.class
 com\limpoto\webapps\myBlog\actions\IndexAction.class

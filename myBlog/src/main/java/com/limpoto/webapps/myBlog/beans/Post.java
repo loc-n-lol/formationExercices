@@ -6,14 +6,14 @@ public class Post {
 
 	private int id;
 	private String titre;
-	private String Corps;
+	private String corps;
 	private Date dateCreation;
 	
 	public Post(int id, String titre, String corps, Date dateCreation) {
 		super();
 		this.id = id;
 		this.titre = titre;
-		Corps = corps;
+		this.corps = corps;
 		this.dateCreation = dateCreation;
 	}
 	
@@ -34,10 +34,10 @@ public class Post {
 		this.titre = titre;
 	}
 	public String getCorps() {
-		return Corps;
+		return corps;
 	}
 	public void setCorps(String corps) {
-		Corps = corps;
+		this.corps = corps;
 	}
 	public Date getDateCreation() {
 		return dateCreation;

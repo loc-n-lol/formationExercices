@@ -10,6 +10,10 @@
 
     <package name="default" namespace="/" extends="struts-default">
 
+		<result-types>
+			<result-type name="fluxRSS" class="com.limpoto.webapps.myBlog.util.RSSResult" />
+		</result-types>
+
 		<interceptors>		
 			<interceptor name="daoInterceptor" class="com.limpoto.webapps.myBlog.util.DAOInterceptor" />
 		
@@ -26,6 +30,17 @@
         <action name="index" class="com.limpoto.webapps.myBlog.actions.IndexAction" method="index" >
             <result name="success">/index.jsp</result>
         </action>
+        
+        <action name="indexRSS" class="com.limpoto.webapps.myBlog.actions.PostAction" method="lister" >
+            <result name="success" type="fluxRSS">
+            	<param name="channelTitle">blog du Futur</param>
+            	<param name="channelDescription">un super flux à lire tous les jours</param>
+            	<param name="channelLink">indexRSS</param>
+            	<param name="itemCollection">posts</param>
+            	<param name="itemTitle">titre</param>
+            	<param name="itemDescription">corps</param>
+            </result>
+        </action>        
         
         <action name="creer" class="com.limpoto.webapps.myBlog.actions.PostAction" method="creer" >
             <result name="success">/editer.jsp</result>
