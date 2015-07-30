@@ -5,9 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>hello</title>
+<title><s:text name="welcome.title" /></title>
 </head>
 <body>
 <h2><s:property value="message" /> </h2>
+<h3><s:property value="message2" /> </h3>
 </body>
 </html>

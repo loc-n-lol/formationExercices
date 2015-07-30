@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<title>JSF 2.2</title>
+<link href="./css/styles.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+<h:body>
+<h1 class="title">JSF 2.2</h1>
+<div align="center">
+<fieldset>
+<legend>JSF</legend>
+<h:form>
+<h:inputText value="#{indexBean.nom}" />
+<h:inputSecret value="#{indexBean.password}" />
+<h:commandButton action="#{indexBean.login}" value="login" />
+</h:form>
+</fieldset>
+</div>
+<hr style="margin-top: 100px"/>
+</h:body></html>
