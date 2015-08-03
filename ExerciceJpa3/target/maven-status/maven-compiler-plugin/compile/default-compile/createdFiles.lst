@@ -1,0 +1,6 @@
+com\loncoto\app\ExerciceJpa3\jpa\JpaTest.class
+com\loncoto\app\ExerciceJpa3\beans\Content.class
+com\loncoto\app\ExerciceJpa3\beans\Gallerie.class
+com\loncoto\app\ExerciceJpa3\beans\Image.class
+com\loncoto\app\ExerciceJpa3\beans\Document.class
+com\loncoto\app\ExerciceJpa3\beans\Tag.class
