@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+          http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+          http://www.springframework.org/schema/util
+            http://www.springframework.org/schema/util/spring-util-4.0.xsd
+            http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/tx
+           http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+           http://www.springframework.org/schema/mvc
+			http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd"
+			default-autowire="byName">
+
+
+<bean id="dbf" 
+		class="javax.xml.parsers.DocumentBuilderFactory"
+		factory-method="newInstance">
+		<property name="schema" ref="schema" />
+</bean>
+
+<bean id="fschema" class="java.io.File">
+	<constructor-arg index="0" value="baseexport.xsd"/>
+</bean>
+
+<bean id="sfactory" class="javax.xml.validation.SchemaFactory" factory-method="newInstance">
+	<constructor-arg index="0" value="http://www.w3.org/2001/XMLSchema"/>
+</bean>
+
+<bean id="schema" class="javax.xml.validation.Schema"
+	factory-bean="sfactory"
+	factory-method="newSchema">
+	<constructor-arg index="0" ref="fschema"/>
+</bean>
+
+<bean id="db"
+	class="javax.xml.parsers.DocumentBuilder"
+	factory-bean="dbf"
+	factory-method="newDocumentBuilder"
+	>
+</bean>
+
+<bean id="f" class="java.io.File">
+	<constructor-arg index="0" value="baseexport.xml"/>
+</bean>
+
+<bean id="doc"
+	class="org.w3c.dom.Document"
+	factory-bean="db"
+	factory-method="parse">
+	<constructor-arg index="0" ref="f" />
+</bean>
+
+</beans>

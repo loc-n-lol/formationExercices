@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<data>
+	<table name="articles">
+		<columns>
+			<column name="id" type="integer" />
+			<column name="nom" type="varchar" />
+			<column name="code" type="varchar" />
+			<column name="stock" type="integer" />
+		</columns>
+		<row>
+			<cell name="id">1</cell>
+			<cell name="nom">aspirateur spir 2000</cell>
+			<cell name="code">HTFG00045</cell>
+			<cell name="stock">15</cell>
+		</row>
+		<row>
+			<cell name="id">2</cell>
+			<cell name="nom">aspirateur spir 3000</cell>
+			<cell name="code">HTFG00046</cell>
+			<cell name="stock">10</cell>
+		</row>
+		<row>
+			<cell name="id">3</cell>
+			<cell name="nom">balai</cell>
+			<cell name="code">HTFG00048</cell>
+			<cell name="stock">2</cell>
+		</row>
+	</table>
+	<table name="magasin">
+		<columns>
+			<column name="id" type="integer" />
+			<column name="nom" type="varchar" />
+			<column name="adresse" type="varchar" />
+			<column name="gerant" type="varchar" />
+		</columns>	
+		<row>
+			<cell name="id">2</cell>
+			<cell name="nom">magasin north london</cell>
+			<cell name="adresse">221b baker street</cell>
+			<cell name="gerant">Watson, Dr</cell>
+		</row>
+		<row>
+			<cell name="id">4</cell>
+			<cell name="nom">magasin IPOMME</cell>
+			<cell name="adresse">1 place la defense</cell>
+			<cell name="gerant">Jobs, S</cell>
+		</row>
+		<row>
+			<cell name="id">4</cell>
+			<cell name="nom">magasin EADS</cell>
+			<cell name="adresse">toulouse</cell>
+			<cell name="gerant">Gallois, S</cell>
+		</row>
+	</table>
+</data>
