@@ -27,10 +27,6 @@
 		<property name="schema" ref="schema" />
 </bean>
 
-<bean id="fschema" class="java.io.File">
-	<constructor-arg index="0" value="baseexport.xsd"/>
-</bean>
-
 <bean id="sfactory" class="javax.xml.validation.SchemaFactory" factory-method="newInstance">
 	<constructor-arg index="0" value="http://www.w3.org/2001/XMLSchema"/>
 </bean>
@@ -38,7 +34,7 @@
 <bean id="schema" class="javax.xml.validation.Schema"
 	factory-bean="sfactory"
 	factory-method="newSchema">
-	<constructor-arg index="0" ref="fschema"/>
+	<constructor-arg index="0" type="java.io.File" value="baseexport.xsd"/>
 </bean>
 
 <bean id="db"
@@ -48,15 +44,11 @@
 	>
 </bean>
 
-<bean id="f" class="java.io.File">
-	<constructor-arg index="0" value="baseexport.xml"/>
-</bean>
-
 <bean id="doc"
 	class="org.w3c.dom.Document"
 	factory-bean="db"
 	factory-method="parse">
-	<constructor-arg index="0" ref="f" />
+	<constructor-arg index="0" type="java.io.File"  value="baseexport.xml" />
 </bean>
 
 </beans>
