@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><data>
+	<table name="articles">
+		<columns>
+			<column bob="i:0" name="id" type="integer"/>
+			<column bob="i:1" name="nom" type="varchar"/>
+			<column bob="i:2" name="code" type="varchar"/>
+			<column bob="i:3" name="stock" type="integer"/>
+		</columns>
+		<row>
+			<cell name="id">1</cell>
+			<cell name="nom">aspirateur spir 2000</cell>
+			<cell name="code">HTFG00045</cell>
+			<cell name="stock">15</cell>
+		</row>
+		<row>
+			<cell name="id">2</cell>
+			<cell name="nom">aspirateur spir 3000</cell>
+			<cell name="code">HTFG00046</cell>
+			<cell name="stock">10</cell>
+		</row>
+		<row>
+			<cell name="id">3</cell>
+			<cell name="nom">balai</cell>
+			<cell name="code">HTFG00048</cell>
+			<cell name="stock">2</cell>
+		</row>
+	</table>
+	<table name="magasin">
+		<columns>
+			<column bob="i:4" name="id" type="integer"/>
+			<column bob="i:5" name="nom" type="varchar"/>
+			<column bob="i:6" name="adresse" type="varchar"/>
+			<column bob="i:7" name="gerant" type="varchar"/>
+		</columns>	
+		<row>
+			<cell name="id">2</cell>
+			<cell name="nom">magasin north london</cell>
+			<cell name="adresse">221b baker street</cell>
+			<cell name="gerant">Watson, Dr</cell>
+		</row>
+		<row>
+			<cell name="id">4</cell>
+			<cell name="nom">magasin IPOMME</cell>
+			<cell name="adresse">1 place la defense</cell>
+			<cell name="gerant">Jobs, S</cell>
+		</row>
+		<row>
+			<cell name="id">4</cell>
+			<cell name="nom">magasin EADS</cell>
+			<cell name="adresse">toulouse</cell>
+			<cell name="gerant">Gallois, S</cell>
+		</row>
+	</table>
+</data>

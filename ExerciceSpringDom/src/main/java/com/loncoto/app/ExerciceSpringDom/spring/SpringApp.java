@@ -1,4 +1,4 @@
-package com.loncoto.app.SpringDom.spring;
+package com.loncoto.app.ExerciceSpringDom.spring;
 
 import java.io.File;
 import java.io.IOException;
