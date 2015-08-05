@@ -1,0 +1,4 @@
+com\loncoto\app\ExerciceMemento\beans\MementoAroundAdvice.class
+com\loncoto\app\ExerciceMemento\spring\SpringApp.class
+com\loncoto\app\ExerciceMemento\beans\TextUtils.class
+com\loncoto\app\ExerciceMemento\beans\ITextUtils.class
