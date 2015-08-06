@@ -23,6 +23,7 @@
         
         <action name="save" class="com.loncoto.webapps.ExerciceSpringPlusPlus.actions.IndexAction" method="save" >
             <result name="success" type="redirect">/index</result>
+            <result name="input" type="redirect">/edit</result>
         </action>     
         
         <action name="delete/*" class="com.loncoto.webapps.ExerciceSpringPlusPlus.actions.IndexAction" method="delete" >

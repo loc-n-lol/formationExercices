@@ -16,8 +16,8 @@
 	<s:textfield name="datePlanification" value="%{datePlanification}" label="Date Planification"/>
 	<s:textarea name="memo" value="%{memo}" label="Description" cols="80" rows="5"/>
 	<s:textfield name="statut" value="%{statut}" label="Statut" />
-	<s:select name="intervenantId" value="%{intervenantId}" label="Intervenant" list="listeIntervenants" listKey="id" listValue="nom"/>
-	<s:select name="materielId" value="%{materielId}" label="Materiel" list="listeMateriels" listKey="id" listValue="nom"/>
+	<s:select name="intervenantId" label="Intervenant" list="listeIntervenants" listKey="id" listValue="nom"/>
+	<s:select name="materielId" label="Materiel" list="listeMateriels" listKey="id"/>
 	<s:submit />
 </s:form>
 
